@@ -8,29 +8,40 @@ class Program {
     Intro(); // excecutes the Intro method 
 
     Comp Comp1 = new Comp(); // creating variables for the number of contestants to be compared
-     Comp1.lastYear = 679;
-     Comp1.thisYear = 252;
+     Comp1.lastYear = 1;
+     Comp1.thisYear = 2;
 
    var input = Console.ReadLine(); // takes the input from the user
-      if (input == "1")
+if (input == "1")
       {
-        Console.WriteLine("\nThe number of contestants in the last year is " + Comp1.lastYear + " and the number of contestants in this year is " + Comp1.thisYear + ".");
-        Console.WriteLine("This year's expected revenue is $" + (Comp1.thisYear * 25));
+        Console.WriteLine("Enter the number of contestants last year");
+        Comp1.lastYear = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Enter the number of contestants this year");
+        Comp1.thisYear = Convert.ToInt32(Console.ReadLine());
+    if (Comp1.lastYear <= 30 && Comp1.thisYear  <= 30)
+           {
+           Console.WriteLine("\nThe number of contestants in the last year is " + Comp1.lastYear + " and the number of contestants in this year is " + Comp1.thisYear +                                   ".");
+           Console.WriteLine("This year's expected revenue is $" + (Comp1.thisYear * 25));
 
-        if(Comp1.thisYear > (2 * Comp1.lastYear))
-          {
-            Console.WriteLine("The competition is more than twice as big as last years!");
-          }
-        else if (Comp1.thisYear > Comp1.lastYear)
-          {
-            Console.WriteLine("The competition is bigger than ever!");
-          }
-        else {
-          Console.WriteLine("A tighter race this year! Come out and cast your vote!");
-          }
-        continue;
+           if(Comp1.thisYear > (2 * Comp1.lastYear))
+              {
+               Console.WriteLine("The competition is more than twice as big as last years!");
+              }
+           else if (Comp1.thisYear > Comp1.lastYear)
+              {
+               Console.WriteLine("The competition is bigger than ever!");
+              }
+           else {
+             Console.WriteLine("A tighter race this year! Come out and cast your vote!");
+             }
+            continue;
 
-      }
+          }
+    else
+        { Console.WriteLine("Please only enter a numbers between 1 and 30");
+          continue;
+          }
+        }
       else if (input == "2")
         {
           Console.WriteLine("Thank you for using the Greenville Revenue App!");
@@ -41,8 +52,8 @@ class Program {
           Console.WriteLine("invalid input. Please try again");
           continue;
         }
-
-
+        
+        
   }while(true);
     }
   // end of main
