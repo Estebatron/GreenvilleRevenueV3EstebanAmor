@@ -18,7 +18,8 @@ if (input == "1")
         Comp1.lastYear = Convert.ToInt32(Console.ReadLine());
         Console.WriteLine("Enter the number of contestants this year");
         Comp1.thisYear = Convert.ToInt32(Console.ReadLine());
-    if (Comp1.lastYear <= 30 && Comp1.thisYear  <= 30)
+    if (Comp1.lastYear <= 30 && Comp1.lastYear >= 0 && 
+        Comp1.thisYear <= 30 && Comp1.thisYear >= 0)
            {
            Console.WriteLine("\nThe number of contestants in the last year is " + Comp1.lastYear + " and the number of contestants in this year is " + Comp1.thisYear +                                   ".");
            Console.WriteLine("This year's expected revenue is $" + (Comp1.thisYear * 25));
